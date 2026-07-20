@@ -1,23 +1,12 @@
+#Gaps in your survey
+Your review shows several repeated limitations across papers:
 
-# Research Gap
+Most models are trained on general datasets like MSVD, MSR-VTT, VATEX, or MS COCO, not real CCTV footage.
 
-## Existing Problems
+Many methods are accurate but computationally heavy, using many stages like object detection, tracking, action recognition, graph reasoning, and LLM prompting.
 
-After studying recent literature on deep learning-based video captioning, the following limitations were identified:
+Several models depend on optical flow, large language models, or large pretrained components, which increases inference cost.
 
-- Most existing models are trained on general datasets such as MSVD and MSR-VTT.
-- Limited focus on CCTV surveillance videos.
-- High computational complexity.
-- Lack of real-time object detection integration.
-- Existing methods mainly focus on caption generation rather than surveillance understanding.
+Most systems generate captions, but not surveillance-aware captions that emphasize abnormality, threat, or activity type.
 
-## Proposed Solution
-
-The proposed system integrates YOLOv8 object detection with feature extraction and caption generation to improve automatic understanding of CCTV surveillance videos.
-
-## Expected Contribution
-
-- Accurate object detection
-- Better surveillance understanding
-- Improved caption generation
-- Real-time applicability
+Many papers evaluate on standard caption metrics, but not on whether the caption is useful for a security operator.
