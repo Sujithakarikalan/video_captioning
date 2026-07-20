@@ -2,157 +2,208 @@
 
 ## 📌 Overview
 
-This project presents an AI-powered surveillance system that automatically generates meaningful text descriptions from CCTV videos using Deep Learning. The system analyzes surveillance footage, understands the visual scene, recognizes human activities, and generates natural language captions describing the events occurring in the video.
+This project aims to develop an intelligent deep learning-based surveillance system that automatically analyzes CCTV videos and generates meaningful textual descriptions of the events occurring in the scene.
 
-Example:
-
-Input:
-- CCTV video showing a person entering a building carrying a backpack.
-
-Output:
-- "A person enters the building carrying a backpack."
+The proposed system reduces manual monitoring by detecting important objects, understanding the visual scene, and generating natural language captions for surveillance videos.
 
 ---
 
-# 🚀 Features
+## 🚀 Current Progress
 
-- CCTV video analysis
-- Automatic frame extraction
-- Visual feature extraction
-- Human action recognition
-- Automatic caption generation
-- Intelligent surveillance assistance
+✔ Literature Survey Completed
 
----
+✔ Research Gap Identified
 
-# 🎯 Problem Statement
+✔ Methodology Designed
 
-Manual monitoring of CCTV surveillance footage is time-consuming and inefficient. Security personnel must continuously observe long hours of video recordings to identify important events. This project automates the surveillance process by analyzing CCTV videos and generating descriptive captions using deep learning models, enabling faster event understanding and efficient surveillance monitoring.
+
+
+
 
 ---
 
-# 🛠 Technologies Used
+## 🎯 Problem Statement
+
+Traditional CCTV surveillance systems continuously record large amounts of video data, making manual monitoring difficult and time-consuming. Existing systems mainly detect objects but do not provide meaningful textual descriptions of surveillance events.
+
+This project proposes an intelligent deep learning-based solution to automatically analyze CCTV videos and generate descriptive captions for efficient surveillance.
+
+---
+
+## 🛠 Technologies Used
 
 - Python
 - OpenCV
 - PyTorch
-- Hugging Face Transformers
+- Ultralytics YOLOv8
 - NumPy
 - Pandas
-- Streamlit / Flask
+- Google Colab
 - Git
 - GitHub
 
 ---
 
-# 🤖 Deep Learning Models Used
+## 🤖 Deep Learning Models
 
-| Model | Purpose |
-|---------|----------|
-| Video Swin Transformer | Extracts visual features from CCTV video frames |
-| SlowFast | Recognizes human actions and motion |
-| T5 Transformer | Generates natural language captions from extracted features |
+### Module 1 (Completed)
+
+**YOLOv8**
+
+Purpose:
+- Object Detection
+
+
+### Future Modules
+
+- Feature Extraction
+- Caption Generation Model
+- Performance Evaluation
 
 ---
 
-# 📂 Dataset
+## 📂 Dataset
 
-The project uses publicly available benchmark datasets:
+### Current Dataset
 
-- MSVD (Microsoft Video Description Dataset)
-- MSR-VTT (Microsoft Research Video-to-Text Dataset)
+**VisDrone2019-DET**
+
+Used for training the YOLOv8 object detection model.
+
+Classes:
+
+- Pedestrian
+- People
+- Bicycle
+- Car
+- Van
+- Truck
+- Tricycle
+- Awning-Tricycle
+- Bus
+- Motorcycle
 
 ---
 
-# ⚙️ Workflow
+## ⚙️ Proposed Workflow
 
 CCTV Video
+
 ↓
-Frame Extraction (OpenCV)
+
+Frame Extraction
+
 ↓
-Video Swin Transformer
-(Visual Feature Extraction)
+
+YOLOv8 Object Detection
+
 ↓
-SlowFast
-(Action Recognition)
+
+Feature Extraction
+
 ↓
-Feature Fusion
+
+Scene Understanding
+
 ↓
-T5 Transformer
-(Caption Generation)
+
+Caption Generation
+
 ↓
+
 Generated Caption
 
 ---
 
-# 📋 Implementation Steps
+## 📋 Project Modules
 
-### Step 1
-Load the CCTV video.
+### Module 1
+Video Input & Frame Extraction
 
-### Step 2
-Extract video frames using OpenCV.
+### Module 2
+Object Detection using YOLOv8
 
-### Step 3
-Preprocess the extracted frames.
+### Module 3
+Feature Extraction
 
-### Step 4
-Extract visual features using the Video Swin Transformer.
+### Module 4
+Caption Generation
 
-### Step 5
-Recognize human actions using the SlowFast model.
-
-### Step 6
-Combine visual and action features.
-
-### Step 7
-Generate captions using the T5 Transformer.
-
-### Step 8
-Display the generated caption.
+### Module 5
+Performance Evaluation
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
-CCTV-Video-Captioning/
+```
+YOLO_Project/
 
-├── dataset/
+│── dataset/
 
-├── preprocessing/
+│   ├── train/
 
-├── models/
+│   ├── valid/
 
-│ ├── video_swin.py
+│   └── original/
 
-│ ├── slowfast.py
+│
+│── models/
 
-│ ├── t5_caption.py
+│── results/
 
-├── training/
+│── notebooks/
 
-├── testing/
+│── data.yaml
 
-├── app.py
+│── requirements.txt
 
-├── requirements.txt
-
-└── README.md
+│── README.md
+```
 
 ---
 
-# 📊 Evaluation Metrics
+## 📊 Evaluation Metrics
+
+The complete system will be evaluated using:
 
 - BLEU
 - METEOR
 - ROUGE-L
 - CIDEr
 
+The object detection model is evaluated using:
+
+- Precision
+- Recall
+- mAP@0.5
+- mAP@0.5:0.95
+
 ---
 
-# 💻 Installation
+## 🚀 Current Implementation
 
-Clone the repository
+The first implementation focuses on training a YOLOv8 object detection model using the VisDrone dataset.
 
-```bash
-git clone https://github.com/yourusername/CCTV-Video-Captioning.git
+Completed tasks:
+
+- Dataset Preparation
+- Annotation Conversion
+- YOLO Dataset Configuration
+- data.yaml Creation
+- YOLOv8 Training
+
+---
+
+## 📌 Future Work
+
+- Complete Feature Extraction Module
+
+- Integrate Video Caption Generation Model
+
+- Build End-to-End CCTV Captioning System
+
+- Develop Web Interface for Real-Time Surveillance
+
+---
+
